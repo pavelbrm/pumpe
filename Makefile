@@ -9,9 +9,11 @@ BUILD_ID := `git rev-parse --short HEAD`
 lint: ## Lint code
 	golangci-lint run -v
 
+
 build: ## Build
 	mkdir -p bin
 	CGO_ENABLED=0 go build -ldflags "-s -w" -o bin/pumpe ./cmd/pumpe
+
 
 build_with_race: ## Build code with the race detector enabled
 	go build -race
