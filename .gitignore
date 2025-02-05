@@ -1,0 +1,23 @@
+# Common paths
+.vscode
+.idea
+.DS_Store
+
+# Binaries
+bin
+
+# Test artifacts
+*.out
+*.test
+*.bench
+coverage*.html
+
+# Other files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.o
+*.a
+*.prof

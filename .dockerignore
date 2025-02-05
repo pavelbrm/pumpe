@@ -1,0 +1,10 @@
+.assets
+.dockerignore
+.DS_Store
+.git
+.gitignore
+.github
+bin
+Dockerfile
+docker-compose.yml
+README.md

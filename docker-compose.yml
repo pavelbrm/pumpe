@@ -1,0 +1,27 @@
+networks:
+  pumpe:
+    driver: bridge
+
+services:
+  pumpe:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: ["bin/pumpe"]
+    volumes:
+      - ${PUMPE_WG_DIR:-./.wg}:/src/.wg
+    networks:
+      - pumpe
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8080/v1/_internal/status"]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+      start_period: 120s
+      start_interval: 30s
+    environment:
+      - PUMPE_WG_DIR=/src/.wg
+      - PUMPE_LOG_LEVEL=${PUMPE_LOG_LEVEL:-INFO}
+      - PUMPE_TOR_NUM=${PUMPE_TOR_NUM:-1}
