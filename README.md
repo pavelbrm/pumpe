@@ -47,7 +47,7 @@ To run it, from the project root directory:
 ```bash
 mkdir -p bin
 go build -o bin/pumpe ./cmd/pumpe
-PUMPE_LOG_LEVEL=DEBUG PUMPE_WG_DIR=./wg PUMPE_NUM_TOR=1 ./bin/pumpe
+PUMPE_LOG_LEVEL=DEBUG PUMPE_WG_DIR=./.wg PUMPE_TOR_NUM=1 ./bin/pumpe
 ```
 
 
